@@ -226,11 +226,16 @@ export function ImageCropper() {
 
       setProcessing(true);
 
+      // const blob = await getCroppedImg(
+      //   preview,
+      //   croppedAreaPixels,
+      //   rotation,
+      // );
+
       const blob = await getCroppedImg(
-        preview,
-        croppedAreaPixels,
-        rotation,
-      );
+  preview,
+  croppedAreaPixels
+);
 
       setCroppedBlob(blob);
 
@@ -318,7 +323,8 @@ export function ImageCropper() {
 
       {/* Upload */}
 
-      <UploadZone onUpload={handleUpload} />
+      {/* <UploadZone onUpload={handleUpload} /> */}
+      <UploadZone onFileSelect={handleUpload} />
 
       {image && (
 

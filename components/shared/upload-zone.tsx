@@ -188,11 +188,15 @@
 import { useRef } from "react";
 import { UploadCloud, ImageIcon } from "lucide-react";
 
+// interface UploadZoneProps {
+//   onUpload: (file: File) => void;
+// }
+
 interface UploadZoneProps {
-  onUpload: (file: File) => void;
+  onFileSelect: (file: File) => void;
 }
 
-export function UploadZone({ onUpload }: UploadZoneProps) {
+export function UploadZone({ onFileSelect }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleFile = (file: File | null) => {
@@ -200,7 +204,8 @@ export function UploadZone({ onUpload }: UploadZoneProps) {
 
     if (!file.type.startsWith("image/")) return;
 
-    onUpload(file);
+    // onUpload(file);
+    onFileSelect(file);
   };
 
   return (

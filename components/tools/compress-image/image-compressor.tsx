@@ -121,7 +121,7 @@ export function ImageCompressor()  {
 
       </div>
 
-      <UploadZone onUpload={handleFileSelect} />
+    <UploadZone onFileSelect={handleFileSelect} />
             {selectedFile && (
 
         <>

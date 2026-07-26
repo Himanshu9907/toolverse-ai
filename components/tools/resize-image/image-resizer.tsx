@@ -244,7 +244,8 @@ const handleDownload = () => {
 
       {/* Upload */}
 
-      <UploadZone onUpload={handleImageUpload} />
+      {/* <UploadZone onUpload={handleImageUpload} /> */}
+      <UploadZone onFileSelect={handleImageUpload} />
 
       {/* Main Layout */}
 
