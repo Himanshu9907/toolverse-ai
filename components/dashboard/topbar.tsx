@@ -1,90 +1,103 @@
-
 // "use client";
 
-// import { Bell, Menu, Plus, Search } from "lucide-react";
+// import { useState } from "react";
+// import { AnimatePresence, motion } from "framer-motion";
+// import {
+//   Bell,
+//   Search,
+//   Sparkles,
+//   ChevronDown,
+//   User,
+//   Settings,
+//   LogOut,
+//   X,
+// } from "lucide-react";
+
 // import { ThemeToggle } from "@/components/layout/theme-toggle";
 // import { MobileSidebar } from "@/components/dashboard/mobile-sidebar";
+// import { ToolSearch } from "@/components/search/tool-search";
+
+// import { useRouter } from "next/navigation";
+// import { logoutUser } from "@/actions/logout";
 
 // export function DashboardTopbar() {
+//   const [showSearch, setShowSearch] = useState(false);
+
+//   const [profileOpen, setProfileOpen] = useState(false);
+
+//   const [mobileProfileOpen, setMobileProfileOpen] = useState(false);
+
+// const router = useRouter();
+
+// const handleLogout = async () => {
+//   await logoutUser();
+
+//   router.push("/login");
+//   router.refresh();
+// };
+
 //   return (
-//     <header className="sticky top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+//     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
 
-//       <div className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+//       <div className="mx-auto flex h-16 max-w-[1700px] items-center py-12 px-5 lg:px-8">
 
-//         {/* LEFT */}
+//         {/* ================= LEFT ================= */}
 
-//         <div className="flex items-center gap-4 flex-1">
-
-//           {/* Mobile Menu */}
+//         <div className="flex w-[230px] items-center gap-3">
 
 //           <MobileSidebar />
 
-//           {/* Heading */}
+//           <div className="min-w-0">
 
-//           <div>
-
-//             <h1 className="text-xl font-bold lg:text-2xl">
+//             <h1 className="truncate text-xl font-bold tracking-tight">
 
 //               Dashboard
 
 //             </h1>
 
-//             <p className="hidden text-sm text-muted-foreground sm:block">
+//             <p className="hidden text-xs text-muted-foreground lg:block">
 
-//               Welcome back 👋
+//               Good to see you again 👋
 
 //             </p>
 
 //           </div>
 
-//           {/* Search */}
+//         </div>
 
-//           <div className="ml-8 hidden max-w-xl flex-1 lg:block">
+//         {/* ================= CENTER ================= */}
 
-//             <div className="relative">
+//         <div className="hidden flex-1 justify-center xl:flex">
 
-//               <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+//           <div className="w-full max-w-[520px]">
 
-//               <input
-//                 placeholder="Search AI tools..."
-//                 className="h-12 w-full rounded-2xl border bg-background pl-12 pr-4 outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
-//               />
-
-//             </div>
+//             <ToolSearch variant="dashboard" />
 
 //           </div>
 
 //         </div>
+//                 {/* ================= RIGHT ================= */}
 
-//         {/* RIGHT */}
-
-//         <div className="flex items-center gap-2 sm:gap-3">
+//         <div className="ml-auto flex items-center gap-2">
 
 //           {/* Mobile Search */}
 
-//           <button className="flex h-11 w-11 items-center justify-center rounded-xl border transition hover:bg-muted lg:hidden">
-
-//             <Search className="h-5 w-5" />
-
+//           <button
+//             onClick={() => setShowSearch(!showSearch)}
+//             className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background transition-all duration-300 hover:bg-muted xl:hidden"
+//           >
+//             {showSearch ? (
+//               <span className="text-lg font-semibold">✕</span>
+//             ) : (
+//               <Search className="h-4 w-4" />
+//             )}
 //           </button>
 
-//           {/* New Tool */}
+//           <button className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background transition-all duration-300 hover:bg-muted ml-3">
 
-//           <button className="hidden items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03] md:flex">
+//             <Bell className="h-4 w-4" />
 
-//             <Plus className="h-4 w-4" />
-
-//             New Tool
-
-//           </button>
-
-//           {/* Notification */}
-
-//           <button className="relative flex h-11 w-11 items-center justify-center rounded-xl border transition hover:bg-muted">
-
-//             <Bell className="h-5 w-5" />
-
-//             <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-background" />
+//             <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-background" />
 
 //           </button>
 
@@ -92,225 +105,234 @@
 
 //           <ThemeToggle />
 
-//           {/* User */}
+//           <div className="relative hidden xl:block">
 
-//           <button className="flex items-center gap-3 rounded-2xl border bg-background px-2 py-2 transition hover:bg-muted sm:px-3">
+//   <button
+//     onClick={() => setProfileOpen(!profileOpen)}
+//     className="group flex h-10 items-center gap-3 rounded-xl border border-border bg-background px-2 pr-3 transition-all duration-300 hover:bg-muted"
+//   >
 
-//             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 font-bold text-white">
+//     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-sm font-bold text-white">
 
-//               H
+//       H
 
-//             </div>
+//     </div>
 
-//             <div className="hidden lg:block">
+//     <div className="hidden text-left xl:block">
 
-//               <p className="text-sm font-semibold">
+//       <p className="text-sm font-semibold leading-none">
 
-//                 Himanshu
+//         Himanshu
 
-//               </p>
+//       </p>
 
-//               <p className="text-xs text-muted-foreground">
+//       <div className="mt-1 flex items-center gap-1">
 
-//                 Free Plan
+//         <Sparkles className="h-3 w-3 text-yellow-500" />
 
-//               </p>
+//         <span className="text-xs text-muted-foreground">
 
-//             </div>
+//           Free Plan
 
-//           </button>
+//         </span>
+
+//       </div>
+
+//     </div>
+
+//     <ChevronDown
+//       className={`hidden h-4 w-4 transition xl:block ${
+//         profileOpen ? "rotate-180" : ""
+//       }`}
+//     />
+
+//   </button>
+
+//   {profileOpen && (
+
+//     <div className="absolute right-0 mt-3 w-56 overflow-hidden rounded-2xl border bg-card shadow-xl">
+
+//       <button className="flex w-full items-center gap-3 px-5 py-3 hover:bg-muted">
+
+//         <User className="h-4 w-4" />
+
+//         Profile
+
+//       </button>
+
+//       <button className="flex w-full items-center gap-3 px-5 py-3 hover:bg-muted">
+
+//         <Settings className="h-4 w-4" />
+
+//         Settings
+
+//       </button>
+
+//       <button
+//         onClick={handleLogout}
+//         className="flex w-full items-center gap-3 px-5 py-3 text-red-500 hover:bg-red-50 dark:hover:bg-red-950"
+//       >
+
+//         <LogOut className="h-4 w-4" />
+
+//         Logout
+
+//       </button>
+
+//     </div>
+
+//   )}
+
+// </div>
 
 //         </div>
 
 //       </div>
 
+
+
+
+
+//       <div className="xl:hidden">
+
+//   <button
+//     onClick={() => setMobileProfileOpen(true)}
+//     className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-background transition hover:bg-muted"
+//   >
+
+//     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-sm font-bold text-white">
+
+//       H
+
+//     </div>
+
+//   </button>
+
+// </div>
+//             {/* ================= MOBILE SEARCH ================= */}
+
+//       <AnimatePresence>
+
+//         {showSearch && (
+
+//           <motion.div
+//             initial={{ opacity: 0, y: -10 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: -10 }}
+//             transition={{ duration: 0.2 }}
+//             className="border-t border-border bg-background/95 p-4 backdrop-blur-xl xl:hidden"
+//           >
+
+//             <ToolSearch
+//               variant="dashboard"
+//               autoFocus
+//             />
+
+//           </motion.div>
+
+//         )}
+
+//       </AnimatePresence>
+
+//       <AnimatePresence>
+
+//   {mobileProfileOpen && (
+
+//     <motion.div
+//       className="fixed inset-0 z-[999] bg-black/50 xl:hidden"
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       exit={{ opacity: 0 }}
+//       onClick={() => setMobileProfileOpen(false)}
+//     >
+
+//       <motion.div
+//         initial={{ y: 500 }}
+//         animate={{ y: 0 }}
+//         exit={{ y: 500 }}
+//         transition={{
+//           type: "spring",
+//           damping: 30,
+//           stiffness: 320,
+//         }}
+//         onClick={(e) => e.stopPropagation()}
+//         className="absolute bottom-0 left-0 right-0 rounded-t-3xl bg-card p-6"
+//       >
+
+//         <div className="mb-6 flex items-center justify-between">
+
+//           <div className="flex items-center gap-4">
+
+//             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-lg font-bold text-white">
+
+//               H
+
+//             </div>
+
+//             <div>
+
+//               <h3 className="text-lg font-bold">
+//                 Himanshu
+//               </h3>
+
+//               <p className="text-sm text-muted-foreground">
+//                 Free Plan
+//               </p>
+
+//             </div>
+
+//           </div>
+
+//           <button
+//             onClick={() => setMobileProfileOpen(false)}
+//             className="rounded-xl p-2 hover:bg-muted"
+//           >
+//             <X className="h-5 w-5" />
+//           </button>
+
+//         </div>
+
+//         <div className="space-y-2">
+
+//           <button className="flex w-full items-center gap-4 rounded-xl p-4 hover:bg-muted">
+
+//             <User className="h-5 w-5" />
+
+//             Profile
+
+//           </button>
+
+//           <button className="flex w-full items-center gap-4 rounded-xl p-4 hover:bg-muted">
+
+//             <Settings className="h-5 w-5" />
+
+//             Settings
+
+//           </button>
+
+//           <button
+//             onClick={handleLogout}
+//             className="flex w-full items-center gap-4 rounded-xl p-4 text-red-500 hover:bg-red-50 dark:hover:bg-red-950"
+//           >
+
+//             <LogOut className="h-5 w-5" />
+
+//             Logout
+
+//           </button>
+
+//         </div>
+
+//       </motion.div>
+
+//     </motion.div>
+
+//   )}
+
+// </AnimatePresence>
+
 //     </header>
+
 //   );
+
 // }
-
-
-"use client";
-
-import { useState } from "react";
-
-import { AnimatePresence, motion } from "framer-motion";
-
-import { Bell, Plus, Search } from "lucide-react";
-
-import { ThemeToggle } from "@/components/layout/theme-toggle";
-
-import { MobileSidebar } from "@/components/dashboard/mobile-sidebar";
-
-export function DashboardTopbar() {
-
-  const [showSearch, setShowSearch] = useState(false);
-
-  return (
-
-    <header className="sticky top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-
-      <div className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-
-        {/* LEFT */}
-
-        <div className="flex flex-1 items-center gap-4">
-
-          <MobileSidebar />
-
-          <div>
-
-            <h1 className="text-xl font-bold lg:text-2xl">
-
-              Dashboard
-
-            </h1>
-
-            <p className="hidden text-sm text-muted-foreground sm:block">
-
-              Welcome back 👋
-
-            </p>
-
-          </div>
-
-          {/* Desktop Search */}
-
-          <div className="ml-8 hidden max-w-xl flex-1 lg:block">
-
-            <div className="relative">
-
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-
-              <input
-                type="text"
-                placeholder="Search AI tools..."
-                className="h-12 w-full rounded-2xl border bg-background pl-12 pr-4 outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
-              />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* RIGHT */}
-
-        <div className="flex items-center gap-2 sm:gap-3">
-
-          {/* Mobile Search */}
-
-          <button
-            onClick={() => setShowSearch(!showSearch)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border transition hover:bg-muted lg:hidden"
-          >
-
-            {showSearch ? (
-
-              <span className="text-lg font-bold">
-
-                ✕
-
-              </span>
-
-            ) : (
-
-              <Search className="h-5 w-5" />
-
-            )}
-
-          </button>
-
-          {/* New Tool */}
-
-          <button className="hidden items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03] md:flex">
-
-            <Plus className="h-4 w-4" />
-
-            New Tool
-
-          </button>
-
-                    {/* Notifications */}
-
-          <button className="relative flex h-11 w-11 items-center justify-center rounded-xl border transition hover:bg-muted">
-
-            <Bell className="h-5 w-5" />
-
-            <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-background" />
-
-          </button>
-
-          {/* Theme */}
-
-          <ThemeToggle />
-
-          {/* User */}
-
-          <button className="flex items-center gap-3 rounded-2xl border bg-background px-2 py-2 transition hover:bg-muted sm:px-3">
-
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 font-bold text-white">
-
-              H
-
-            </div>
-
-            <div className="hidden lg:block">
-
-              <p className="text-sm font-semibold">
-
-                Himanshu
-
-              </p>
-
-              <p className="text-xs text-muted-foreground">
-
-                Free Plan
-
-              </p>
-
-            </div>
-
-          </button>
-
-        </div>
-
-      </div>
-
-      {/* Mobile Search */}
-
-      <AnimatePresence>
-
-        {showSearch && (
-
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.25 }}
-            className="border-t bg-background p-4 lg:hidden"
-          >
-
-            <div className="relative">
-
-              <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-
-              <input
-                autoFocus
-                type="text"
-                placeholder="Search AI tools..."
-                className="h-12 w-full rounded-2xl border bg-background pl-12 pr-4 outline-none transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/20"
-              />
-
-            </div>
-
-          </motion.div>
-
-        )}
-
-      </AnimatePresence>
-
-    </header>
-
-  );
-
-}

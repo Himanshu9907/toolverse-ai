@@ -5,6 +5,8 @@ import { RecommendedTools } from "@/components/dashboard/recommended-tools";
 import { StaggerItem } from "@/components/animations/stagger-item";
 import { StaggerChildren } from "@/components/animations/stagger-children";
 import { QuickActions } from "@/components/dashboard/quick-actions";
+import { DashboardFooter } from "@/components/dashboard/dashboard-footer";
+import { LogoutButton } from "@/components/dashboard/logout-button";
 
 export default function DashboardPage() {
   return (
@@ -16,92 +18,38 @@ export default function DashboardPage() {
       <WelcomeCard />
       </StaggerItem>
 
-       <StaggerItem>
-      <div className="grid gap-6 lg:grid-cols-2">
+       
 
-        <div className="rounded-3xl border bg-card p-8">
+    <StaggerItem>
+  <div className="mt-6">
+    <StatsGrid />
+  </div>
+</StaggerItem>
 
-          <h2 className="text-2xl font-bold">
+<StaggerItem>
+  <div className="mt-12">
+    <ContinueWorking />
+  </div>
+</StaggerItem>
 
-            Stats Grid
+<StaggerItem>
+  <div className="mt-12">
+    <RecommendedTools />
+  </div>
+</StaggerItem>
 
-          </h2>
+</StaggerChildren >
 
-          <p className="mt-3 text-muted-foreground">
+<div className="mt-12">
+  <QuickActions />
+</div>
 
-            Coming in next step...
+<div className="mt-8 flex justify-end">
+  <LogoutButton />
+</div>
 
-          </p>
+<DashboardFooter />
 
-        </div>
-
-        <div className="rounded-3xl border bg-card p-8">
-
-          <h2 className="text-2xl font-bold">
-
-            Continue Working
-
-          </h2>
-
-          <p className="mt-3 text-muted-foreground">
-
-            Coming in next step...
-
-          </p>
-
-        </div>
-
-      </div>
-
-      <div className="rounded-3xl border bg-card p-8">
-
-        <h2 className="text-2xl font-bold">
-
-          Recommended Tools
-
-        </h2>
-
-        <p className="mt-3 text-muted-foreground">
-
-          Coming in next step...
-
-        </p>
-
-      </div>
-
-      <div className="rounded-3xl border bg-card p-8">
-
-        <h2 className="text-2xl font-bold">
-
-          Recent Activity
-
-        </h2>
-
-        <p className="mt-3 text-muted-foreground">
-
-          Coming in next step...
-
-        </p>
-
-      </div>
-      </StaggerItem>
-
-      <StaggerItem>
-      <StatsGrid />
-      </StaggerItem>
-
-      <StaggerItem>
-      <ContinueWorking />
-      </StaggerItem>
-
-      <StaggerItem>
-      <RecommendedTools />
-      </StaggerItem>
-
-      </StaggerChildren>
-
-      <QuickActions />
-
-    </div>
+</div>
   );
 }
