@@ -509,7 +509,8 @@ export function Hero({ user }: HeroProps) {
 
       </div>
 
-      <div className="mx-auto max-w-7xl px-6">
+      {/* <div className="mx-auto max-w-7xl px-6"> */}
+      <div className="mx-auto max-w-6xl px-6">
 
         <div className="relative flex flex-col items-center pt-24 pb-20 text-center lg:pt-28">
 
@@ -697,11 +698,17 @@ export function Hero({ user }: HeroProps) {
 
           </FadeUp>
 
-          <div className="mt-12 w-full max-w-5xl">
+          {/* <div className="mt-12 w-full max-w-5xl">
 
             <ToolSearch variant="hero" />
 
-          </div>
+          </div> */}
+
+          <div className="mt-14 flex w-full justify-center">
+  <div className="w-full max-w-4xl">
+    <ToolSearch variant="hero" />
+  </div>
+</div>
                     {/* Popular Searches */}
 
           <FadeUp delay={0.35}>
