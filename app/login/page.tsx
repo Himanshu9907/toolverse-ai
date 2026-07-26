@@ -145,6 +145,14 @@ export default function LoginPage() {
     // if (result.success) {
     //   router.push("/dashboard");
     // }
+
+    if (result.success) {
+  router.refresh();
+
+  setTimeout(() => {
+    window.location.href = "/dashboard";
+  }, 500);
+}
   };
 
   return (
