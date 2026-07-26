@@ -142,9 +142,9 @@ export default function LoginPage() {
 
     setMessage(result.message);
 
-    if (result.success) {
-      router.push("/dashboard");
-    }
+    // if (result.success) {
+    //   router.push("/dashboard");
+    // }
   };
 
   return (
