@@ -704,8 +704,14 @@ export function Hero({ user }: HeroProps) {
 
           </div> */}
 
-          <div className="mt-14 flex w-full justify-center">
+          {/* <div className="mt-14 flex w-full justify-center">
   <div className="w-full max-w-4xl">
+    <ToolSearch variant="hero" />
+  </div>
+</div> */}
+
+<div className="mt-14 w-full">
+  <div className="mx-auto w-full max-w-5xl px-4">
     <ToolSearch variant="hero" />
   </div>
 </div>

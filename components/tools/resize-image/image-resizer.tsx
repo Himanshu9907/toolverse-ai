@@ -1,67 +1,3 @@
-// "use client";
-
-// import { Crop } from "lucide-react";
-
-// import { UploadZone } from "./upload-zone";
-// import { PreviewPanel } from "./preview-panel";
-// import { ResizeControls } from "./resize-controls";
-// import { PresetGrid } from "./preset-grid";
-
-// export function ImageResizer() {
-//   return (
-//     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-
-//       {/* Header */}
-
-//       <div className="mb-10">
-
-//         <div className="inline-flex items-center gap-2 rounded-full border bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
-
-//           <Crop className="h-4 w-4" />
-
-//           Image Resizer
-
-//         </div>
-
-//         <h1 className="mt-5 text-4xl font-extrabold tracking-tight lg:text-5xl">
-
-//           Resize Images Instantly
-
-//         </h1>
-
-//         <p className="mt-4 max-w-2xl text-muted-foreground">
-
-//           Resize JPG, PNG, WEBP and AVIF images without losing quality.
-//           Perfect for social media, websites and documents.
-
-//         </p>
-
-//       </div>
-
-//       {/* Upload */}
-
-//       <UploadZone />
-
-//       {/* Main Grid */}
-
-//       <div className="mt-8 grid gap-8 xl:grid-cols-[1.2fr_420px]">
-
-//         <PreviewPanel />
-
-//         <div className="space-y-6">
-
-//           <ResizeControls />
-
-//           <PresetGrid />
-
-//         </div>
-
-//       </div>
-
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useState } from "react";
@@ -310,7 +246,7 @@ const handleDownload = () => {
   onResize={handleResize}
   onDownload={handleDownload}
   isProcessing={isProcessing}
-  canResize={!!resizedBlob}
+  canResize={!!image}
 />
 
           <PresetGrid

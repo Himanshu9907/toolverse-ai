@@ -149,11 +149,12 @@ export function ToolSearch({
 
     <div
       ref={wrapperRef}
-      className={`relative w-full ${
-        variant === "hero"
-          ? "max-w-4xl"
-          : "max-w-xl"
-      }`}
+      // className={`relative w-full ${
+      //   variant === "hero"
+      //     ? "max-w-4xl"
+      //     : "max-w-xl"
+      // }`}
+      className="relative w-full"
     >
 
       {/* Search Box */}
@@ -203,7 +204,7 @@ export function ToolSearch({
               }
 
             }}
-            className="mt-3 flex h-14 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 px-8 font-semibold text-white transition hover:scale-[1.02] md:mt-0"
+            className="mt-3 flex h-14 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 min-w-[180px] px-8 font-semibold text-white transition hover:scale-[1.02] md:mt-0"
           >
 
             Search
