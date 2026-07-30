@@ -8,18 +8,10 @@ const client = new OpenAI({
 
 export async function POST(req: Request) {
   try {
-//     const {
-//       text,
-//       style = "Professional",
-//       level = "Natural",
-//       language = "English",
-//     } = await req.json();
-
-
 const {
   text,
   style = "Professional",
-  level = "Natural",
+ level = "medium",
   language = "English",
   aiSafe = true,
 } = await req.json();
@@ -36,35 +28,6 @@ const {
       );
     }
 
-//     const prompt = `
-// You are KRATIQ AI Humanizer.
-
-// Your task is to rewrite AI-generated content so it sounds completely natural and human-written.
-
-// Rules:
-
-// - Preserve the original meaning.
-// - Do not add new facts.
-// - Do not remove important information.
-// - Improve readability.
-// - Use varied sentence lengths.
-// - Remove robotic wording.
-// - Make it engaging and natural.
-// - Return ONLY the rewritten text.
-
-// Humanization Level:
-// ${level}
-
-// Writing Style:
-// ${style}
-
-// Language:
-// ${language}
-
-// Text:
-
-// ${text}
-// `;
 
 const fullPrompt = `
 You are KRATIQ AI Humanizer.
