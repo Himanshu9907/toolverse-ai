@@ -4,7 +4,7 @@ import { Bell } from "lucide-react";
 
 export function NotificationButton() {
   return (
-    <button className="relative flex h-10 w-10 items-center justify-center rounded-xl border bg-background hover:bg-muted">
+    <button className="relative flex h-10 w-10 items-center justify-center rounded-xl border bg-background hover:bg-muted ml-3">
 
       <Bell className="h-4 w-4" />
 

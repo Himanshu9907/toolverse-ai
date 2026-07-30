@@ -428,7 +428,7 @@ export function Footer() {
 
                 <h3 className="text-2xl font-bold">
 
-                  ToolVerse AI
+                  Kratiq AI Tools
 
                 </h3>
 

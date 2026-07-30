@@ -434,7 +434,7 @@ import { ToolSearch } from "@/components/search/tool-search";
 import { FadeUp } from "@/components/animations/fade-up";
 import { Floating } from "@/components/animations/floating";
 
-import { DashboardPreview } from "./dashboard-preview";
+// import { DashboardPreview } from "./dashboard-preview";
 
 import { featuredTools } from "@/config/tools";
 
@@ -827,7 +827,7 @@ export function Hero({ user }: HeroProps) {
 
           {/* Dashboard Preview */}
 
-          <Floating>
+          {/* <Floating>
 
             <div className="mt-20 w-full">
 
@@ -835,7 +835,7 @@ export function Hero({ user }: HeroProps) {
 
             </div>
 
-          </Floating>
+          </Floating> */}
 
         </div>
 

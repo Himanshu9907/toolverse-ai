@@ -15,10 +15,15 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { FadeUp } from "@/components/animations/fade-up";
+import { Floating } from "@/components/animations/floating";
 
 export function DashboardPreview() {
   return (
+    
     <section className="relative mt-24">
+
+        
 
       {/* Background */}
 

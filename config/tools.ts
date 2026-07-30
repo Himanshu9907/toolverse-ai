@@ -7,6 +7,8 @@ import {
   Crop,
   ScanLine,
   FileImage,
+  Sparkles,
+  ImageIcon,
 } from "lucide-react";
 
 export type ToolCategory =
@@ -87,13 +89,28 @@ export const tools: ToolItem[] = [
     description:
       "Remove image backgrounds in one click using AI.",
     category: "Image",
-    href: "/image/remove-background",
+    href: "/image/background-remover",
     icon: ScanLine,
     featured: true,
     popular: true,
-    premium: true,
-    comingSoon: true,
+    premium: false,
+    comingSoon: false,
   },
+
+  {
+  id: "ai-image-generator",
+  slug: "ai-image-generator",
+  title: "AI Image Generator",
+  description:
+    "Generate stunning AI images from text prompts in seconds.",
+  category: "Image",
+  href: "/ai-image-generator",
+  icon: ImageIcon,
+  featured: true,
+  popular: true,
+  premium: false,
+  comingSoon: false,
+},
 
   // ==========================
   // PDF TOOLS
@@ -177,6 +194,36 @@ export const tools: ToolItem[] = [
     premium: true,
     comingSoon: true,
   },
+
+  {
+  id: "ai-text-generator",
+  slug: "ai-text-generator",
+  title: "AI Text Generator",
+  description:
+    "Generate blogs, emails, captions, product descriptions and more using AI.",
+  category: "AI",
+  href: "/ai-text-generator",
+  icon: Sparkles,
+  featured: true,
+  popular: true,
+  premium: false,
+  comingSoon: false,
+},
+
+{
+  id: "ai-humanizer",
+  slug: "ai-humanizer",
+  title: "AI Humanizer",
+  description:
+    "Rewrite AI-generated text into natural, human-like writing instantly.",
+  category: "AI",
+  href: "/ai-humanizer",
+  icon: Wand2,
+  featured: true,
+  popular: true,
+  premium: false,
+  comingSoon: false,
+},
 
   // ==========================
   // VIDEO TOOLS

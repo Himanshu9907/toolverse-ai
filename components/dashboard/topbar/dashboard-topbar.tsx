@@ -27,7 +27,7 @@ export function DashboardTopbar({ user }: Props) {
   console.log("TOPBAR USER =", user);
   return (
     <>
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl py-4">
 
       <div className="mx-auto flex h-16 max-w-[1700px] items-center px-5 lg:px-8">
 
@@ -49,7 +49,8 @@ export function DashboardTopbar({ user }: Props) {
           </div>
         </div>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-3 flex items-center gap-1">
+        {/* <div className="ml-auto flex items-center gap-4 lg:gap-5"> */}
 
           <SearchButton
             open={showSearch}
