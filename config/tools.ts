@@ -225,6 +225,21 @@ export const tools: ToolItem[] = [
   comingSoon: false,
 },
 
+{
+  id: "resume-builder",
+  slug: "ai-resume-builder",
+  title: "AI Resume Builder",
+  description:
+    "Create professional ATS-friendly resumes with AI and download them as PDF.",
+  category: "AI",
+  href: "/ai-resume-builder",
+  icon: FileText,
+  featured: true,
+  popular: true,
+  premium: false,
+  comingSoon: false,
+},
+
   // ==========================
   // VIDEO TOOLS
   // ==========================

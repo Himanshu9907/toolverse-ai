@@ -51,8 +51,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ToolVerse AI",
-    template: "%s | ToolVerse AI",
+    default: "Kratiq",
+    template: "%s | Kratiq",
   },
   description:
     "100+ AI-powered tools for images, PDFs, videos, automation, and productivity.",
