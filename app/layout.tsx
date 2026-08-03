@@ -56,6 +56,10 @@ export const metadata: Metadata = {
   },
   description:
     "100+ AI-powered tools for images, PDFs, videos, automation, and productivity.",
+
+  verification: {
+    google: "Hd3SnzmHV-qIs1ORh6aM2mgfnQhc-tiAaStvZMaGNj8",
+  },
 };
 
 export default function RootLayout({
