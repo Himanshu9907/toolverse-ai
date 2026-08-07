@@ -80,7 +80,7 @@ export const tools: ToolItem[] = [
     featured: true,
     popular: false,
     premium: false,
-    comingSoon: true,
+    comingSoon: false,
   },
     {
     id: "remove-background",
@@ -130,6 +130,21 @@ export const tools: ToolItem[] = [
     premium: false,
     comingSoon: true,
   },
+
+  {
+  id: "pdf-image-extractor",
+  slug: "image-extractor",
+  title: "PDF Image Extractor",
+  description:
+    "Extract all embedded images from PDF in original quality with duplicate removal and ZIP download.",
+  category: "PDF",
+  href: "/pdf/image-extractor",
+  icon: ImageIcon,
+  featured: true,
+  popular: true,
+  premium: false,
+  comingSoon: false,
+},
 
   {
     id: "split-pdf",
